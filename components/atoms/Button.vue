@@ -1,7 +1,9 @@
 <template lang="pug">
   nuxt-link(v-if='buttonType === "nuxtLink"' :to='path' :class='this.baseClasses' ) {{content}}
+    img(v-if='hasIcon' src='../../assets/icons/angle-double-right-solid.svg' alt="" class='btn-icon')
   button(v-else-if='buttonType === "form"' :class='this.baseClasses') {{content}}
   a(v-else :href='path' class='base' :class='this.baseClasses') {{content}}
+    img(v-if='hasIcon' src='../../assets/icons/external-link-alt-solid.svg' alt="" class='btn-icon')
 </template>
 <script>
 export default {
@@ -11,7 +13,7 @@ export default {
       type: String,
     },
     buttonType: {
-      default: null,
+      default: null, // Default value relates to a normal anchor tag rendered.
       type: String,
       validator(value) {
         return ['nuxtLink', 'form'].includes(value);
@@ -33,6 +35,10 @@ export default {
           'cta',
         ].includes(value);
       },
+    },
+    hasIcon: {
+      default: false,
+      type: Boolean,
     },
   },
   data() {
@@ -64,7 +70,7 @@ export default {
     border-4
     text-gray-700
     cursor-pointer
-    inline-block
+    flex
     font-bold
     text-base
     py-2
@@ -79,6 +85,13 @@ export default {
   /* To be added by conditional */
   &--dark {
     @apply text-white;
+  }
+
+  &:hover,
+  &:focus {
+    & > .btn-icon {
+      @apply animate-swell;
+    }
   }
 }
 
@@ -123,5 +136,9 @@ export default {
 
 .cta {
   @apply rounded-[15%/50%];
+}
+
+.btn-icon {
+  @apply ml-2 w-[1em];
 }
 </style>

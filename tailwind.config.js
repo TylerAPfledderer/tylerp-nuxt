@@ -46,6 +46,15 @@ module.exports = {
         'shadow-background': 'background, shadow',
         background: 'background',
       },
+      keyframes: {
+        swell: {
+          '50%': { transform: 'scale(1.2)' },
+          '100%': { transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        swell: 'swell 0.5s infinite',
+      },
     },
   },
   variants: {
