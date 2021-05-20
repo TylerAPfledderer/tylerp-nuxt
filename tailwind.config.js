@@ -14,13 +14,25 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      heading: ['Titillium Web', 'sans-serif'],
-      body: ['Muli', 'sans-serif'],
+      heading: ['Titillium Web', 'Arial', 'Helvetica', 'sans-serif'],
+      body: [
+        'Mulish',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'Roboto',
+        'Oxygen',
+        'Ubuntu',
+        'Cantarell',
+        'Open Sans',
+        'Helvetica Neue',
+        'sans-serif',
+      ],
     },
     lineHeight: (theme) => ({
       1: theme('spacing.6'),
       2: theme('spacing.12'),
-      3: theme('spacing.18'),
+      3: theme('spacing.16'),
     }),
     modularScale: { ratio: 1.2 },
     extend: {
@@ -55,6 +67,9 @@ module.exports = {
       animation: {
         swell: 'swell 0.5s infinite',
       },
+      screens: {
+        xs: '375px',
+      },
     },
   },
   variants: {
@@ -64,6 +79,7 @@ module.exports = {
     },
   },
   plugins: [
+    // This Modular Scale plugin scheme courtesy of Rico Sta. Cruz - https://ricostacruz.com/til/another-look-at-tailwind
     plugin(({ addUtilities, theme }) => {
       const ratio = theme('modularScale.ratio');
       const leading = theme('lineHeight');
