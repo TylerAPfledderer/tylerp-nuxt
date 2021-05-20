@@ -1,9 +1,9 @@
 <template lang="pug">
   nuxt-link(v-if='buttonType === "nuxtLink"' :to='path' :class='this.baseClasses' ) {{content}}
-    img(v-if='hasIcon' src='../../assets/icons/angle-double-right-solid.svg' alt="" class='btn-icon')
+    img(v-if='hasIcon' src='../../assets/icons/angle-right.svg' alt="" class='btn-icon')
   button(v-else-if='buttonType === "form"' :class='this.baseClasses') {{content}}
   a(v-else :href='path' class='base' :class='this.baseClasses') {{content}}
-    img(v-if='hasIcon' src='../../assets/icons/external-link-alt-solid.svg' alt="" class='btn-icon')
+    img(v-if='hasIcon' src='../../assets/icons/external-link.svg' alt="" class='btn-icon')
 </template>
 <script>
 export default {
