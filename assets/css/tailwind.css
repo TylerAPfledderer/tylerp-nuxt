@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    @apply text-center font-heading;
+  }
+
+  h1 {
+    @apply font-black tracking-wide ms-5 xs:ms-7;
+  }
+
+  h2 {
+    @apply ms-4 xs:ms-6;
+  }
+
+  h3 {
+    @apply ms-3 xs:ms-5;
+  }
+
+  p {
+    @apply mb-6 font-body;
+  }
+}
