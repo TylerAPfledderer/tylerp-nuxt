@@ -1,5 +1,6 @@
 <template lang="pug">
-  div(v-html='require(`../../assets/icons/${icon}.svg?raw`)' :class='large ? "w-16" : "w-6"' )
+  a(v-if='isLink' v-html='require(`~/assets/icons/${icon}.svg?raw`)' class='p-1 w-11 svgLink')
+  div(v-else-if='isLarge' v-html='require(`assets/icons/${icon}.svg?raw`)' class='w-16' )
 </template>
 <script>
 export default {
@@ -25,10 +26,25 @@ export default {
         ].includes(value);
       },
     },
-    large: {
+    isLarge: {
+      default: false,
+      type: Boolean,
+    },
+    isLink: {
       default: false,
       type: Boolean,
     },
   },
 };
 </script>
+<style lang="postcss">
+.svgLink {
+  &:hover svg {
+    @apply animate-waggleScale;
+  }
+
+  &:hover path {
+    @apply fill-[#ff0000];
+  }
+}
+</style>

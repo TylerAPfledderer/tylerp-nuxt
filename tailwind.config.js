@@ -63,9 +63,24 @@ module.exports = {
           '50%': { transform: 'scale(1.2)' },
           '100%': { transform: 'scale(1)' },
         },
+        waggleScale: {
+          '10%': {
+            transform: 'scale(0.8) rotate(-20deg)',
+          },
+          '40%': {
+            transform: 'scale(1.9) rotate(10deg)',
+          },
+          '60%': {
+            transform: 'scale(1.6) rotate(-10deg)',
+          },
+          '100%': {
+            transform: 'scale(1.4)',
+          },
+        },
       },
       animation: {
         swell: 'swell 0.5s infinite',
+        waggleScale: 'waggleScale forwards .5s',
       },
       screens: {
         xs: '375px',
