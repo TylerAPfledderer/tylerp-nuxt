@@ -8,7 +8,15 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Portfolio Site of Tyler Pfledderer, Web Development. Building Efficient and accessible websites with Vue, React, WordPress, and more!',
+      },
+      { name: 'robots', content: 'index. nofollow' },
+      { name: 'revisit-after', content: '30 days' },
+      { name: 'author', content: 'Tyler Pfledderer' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -79,6 +87,10 @@ export default {
     manifest: {
       lang: 'en',
     },
+  },
+
+  generate: {
+    fallback: '404.html',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
