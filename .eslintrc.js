@@ -15,5 +15,6 @@ module.exports = {
     'space-before-function-paren': ['error', 'never'],
     'comma-dangle': ['error', 'only-multiline'],
     'arrow-parens': ['error', 'always'],
+    'no-console': 'off',
   },
 };
