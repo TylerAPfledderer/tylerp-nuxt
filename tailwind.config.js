@@ -85,12 +85,23 @@ module.exports = {
       screens: {
         xs: '375px',
       },
+      backgroundImage: () => ({
+        // Error icon that appears next to invalid input field in FormPair component
+        'error-icon': "url('~/assets/icons/error-icon.svg')",
+        // Check icon that appears next to valid input field in FormPair component
+        'valid-icon': "url('~/assets/icons/check-icon.svg')",
+      }),
+      objectPosition: {
+        'center-top': 'center top',
+      },
     },
   },
   variants: {
     extend: {
       textDecoration: ['hover-focus'],
       fontWeight: ['hover-focus'],
+      position: ['after'],
+      backgroundImage: ['after'],
     },
   },
   plugins: [
@@ -121,5 +132,6 @@ module.exports = {
         });
       });
     }),
+    require('tailwindcss-pseudo-elements'),
   ],
 };

@@ -1,6 +1,6 @@
 <template lang="pug">
   a(v-if='isLink' v-html='require(`~/assets/icons/${icon}.svg?raw`)' class='p-1 w-11 svgLink')
-  div(v-else-if='isLarge' v-html='require(`assets/icons/${icon}.svg?raw`)' class='w-16' )
+  div(v-else v-html='require(`assets/icons/${icon}.svg?raw`)' :class='isLarge ? "w-16" : "w-6"' )
 </template>
 <script>
 export default {

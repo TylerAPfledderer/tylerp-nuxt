@@ -71,6 +71,7 @@ export default {
     text-gray-700
     cursor-pointer
     flex
+    justify-center
     font-bold
     text-base
     py-2

@@ -10,18 +10,32 @@
   }
 
   h1 {
-    @apply font-black tracking-wide ms-5 xs:ms-7;
+    @apply font-black tracking-wide ms-5;
   }
 
   h2 {
-    @apply ms-4 xs:ms-6;
+    @apply ms-4;
   }
 
   h3 {
-    @apply ms-3 xs:ms-5;
+    @apply ms-3;
   }
 
   p {
     @apply mb-6 font-body;
+  }
+
+  @screen md {
+    h1 {
+      @apply ms-7;
+    }
+
+    h2 {
+      @apply ms-6;
+    }
+
+    h3 {
+      @apply ms-5;
+    }
   }
 }

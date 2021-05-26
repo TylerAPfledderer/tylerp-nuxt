@@ -1,6 +1,6 @@
 <template lang="pug">
-  textarea(v-if='isTextArea' class='h-24 p-3 border-[5px] border-transparent rounded shadow-md focus:border-[#FFB700] focus:outline-none' :id='inputId' ref='inputRef' @blur='sendValue')
-  input(v-else :input='inputType' :id='inputId' ref='inputRef' @blur='sendValue')
+  textarea(v-if='isTextArea' :name='`user-${inputId}`' class='h-24 p-3 border-[5px] border-transparent rounded shadow-md focus:border-[#FFB700] focus:outline-none' :id='inputId' ref='inputRef' @blur='sendValue')
+  input(v-else :input='inputType' :id='inputId' :name='`user-${inputId}`' ref='inputRef' @blur='sendValue')
 </template>
 <script>
 export default {
