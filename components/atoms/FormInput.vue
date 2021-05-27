@@ -1,6 +1,6 @@
 <template lang="pug">
-  textarea(v-if='isTextArea' :name='`user-${inputId}`' class='h-24 p-3 border-[5px] border-transparent rounded shadow-md focus:border-[#FFB700] focus:outline-none' :id='inputId' ref='inputRef' @blur='sendValue')
-  input(v-else :input='inputType' :id='inputId' :name='`user-${inputId}`' ref='inputRef' @blur='sendValue')
+  textarea(v-if='isTextArea' :name='`user-${inputId}`' class='h-24 base' :id='inputId' ref='inputRef' @blur='sendValue')
+  input(v-else :input='inputType' :id='inputId' :name='`user-${inputId}`' ref='inputRef' @blur='sendValue' class='base')
 </template>
 <script>
 export default {
@@ -52,4 +52,8 @@ export default {
   },
 };
 </script>
-<style lang="postcss" scoped></style>
+<style lang="postcss" scoped>
+.base {
+  @apply py-[5px] px-2 border-[5px] border-transparent rounded shadow-md focus:border-[#FFB700] focus:outline-none;
+}
+</style>

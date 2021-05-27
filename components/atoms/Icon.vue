@@ -1,5 +1,5 @@
 <template lang="pug">
-  a(v-if='isLink' v-html='require(`~/assets/icons/${icon}.svg?raw`)' class='p-1 w-11 svgLink')
+  a(v-if='isLink' :href='path' v-html='require(`~/assets/icons/${icon}.svg?raw`)' class='block p-2 w-11 svgLink' target='_blank')
   div(v-else v-html='require(`assets/icons/${icon}.svg?raw`)' :class='isLarge ? "w-16" : "w-6"' )
 </template>
 <script>
@@ -33,6 +33,10 @@ export default {
     isLink: {
       default: false,
       type: Boolean,
+    },
+    path: {
+      default: '/#',
+      type: String,
     },
   },
 };

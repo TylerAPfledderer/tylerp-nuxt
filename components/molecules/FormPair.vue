@@ -2,7 +2,7 @@
   // Pair provided in a div to control flex layout
   div(
     ref='container'
-    class='relative flex flex-col mb-2 after:empty-content after:absolute after:right-2 after:top-[31px] after:w-4 after:h-4'
+    class='relative flex flex-col mb-2 after:empty-content after:absolute after:right-2 after:top-[41px] after:w-4 after:h-4'
     :class='valid !== null && (valid ? "after:bg-valid-icon" : "after:bg-error-icon")'
   )
     A-FormLabel(:forLabel='pairId' :content='label' class='mb-1')

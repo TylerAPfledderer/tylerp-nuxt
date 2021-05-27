@@ -78,7 +78,8 @@ export default {
     px-4
     text-center
     overflow-hidden
-    max-w-[150px];
+    max-w-[173px]
+    w-28;
 
   /* Not allow stretch, and is enough length to cover all text used in this project */
   /* max-width: 150px; */
