@@ -57,6 +57,7 @@ module.exports = {
       transitionProperty: {
         'shadow-background': 'background, shadow',
         background: 'background',
+        'nav-toggle': 'transform, opacity, width',
       },
       keyframes: {
         swell: {
@@ -133,5 +134,16 @@ module.exports = {
       });
     }),
     require('tailwindcss-pseudo-elements'),
+    // Apply utility for a fully centered [group of] item(s) in flexbox
+    plugin(({ addUtilities }) => {
+      const newUtility = {
+        '.flex-center': {
+          'justify-content': 'center',
+          'align-items': 'center',
+        },
+      };
+
+      addUtilities(newUtility, ['responsive']);
+    }),
   ],
 };

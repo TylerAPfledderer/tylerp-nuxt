@@ -6,11 +6,11 @@
   h1,
   h2,
   h3 {
-    @apply text-center font-heading;
+    @apply text-center;
   }
 
   h1 {
-    @apply font-black tracking-wide ms-5;
+    @apply font-black tracking-wide font-heading ms-5;
   }
 
   h2 {
@@ -25,11 +25,13 @@
     @apply mb-6 font-body;
   }
 
-  @screen md {
+  @screen sm {
     h1 {
       @apply ms-7;
     }
+  }
 
+  @screen md {
     h2 {
       @apply ms-6;
     }
@@ -38,4 +40,10 @@
       @apply ms-5;
     }
   }
+}
+
+/* Nuxt Special Classes */
+.nuxt-link-active {
+  color: red !important;
+  transform: scale(1.1);
 }
