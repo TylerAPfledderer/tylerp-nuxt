@@ -9,7 +9,7 @@ export default {
     return {
       links: [
         {
-          url: '#about',
+          url: '/#about',
           name: 'About',
         },
         {

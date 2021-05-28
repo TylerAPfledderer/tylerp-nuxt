@@ -62,10 +62,9 @@ export default {
   /**
    * Note on the styles
    * 'text-base' - used to override default from the <button>
-   * 'text-center' - ensure centered text when icons are included
    * 'overflow-hidden' - to prevent icon animations from going outside of the button
   */
-  @apply bg-none rounded border-transparent border-solid border-4 text-gray-700 cursor-pointer flex justify-center font-bold text-base py-2 px-4 text-center overflow-hidden max-w-[173px] min-w-[128px];
+  @apply bg-none rounded border-transparent border-solid border-4 text-gray-700 cursor-pointer flex justify-center font-bold text-base py-2 px-4 overflow-hidden max-w-[173px] min-w-[128px];
 
   /* Not allow stretch, and is enough length to cover all text used in this project */
   /* max-width: 150px; */

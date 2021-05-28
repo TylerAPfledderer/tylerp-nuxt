@@ -4,7 +4,8 @@
     //-   Mobile View: Header and menu toggle visible
     //-   Larger View: Header inline with navlinks
     div(class='flex items-center justify-between p-2 bg-gray-700')
-      A-Heading(tag='h2' content='Tyler Pfledderer' class='text-white font-heading')
+      nuxt-link(to='/' @click.native='hideNavMenuOnClickedLink($event)')
+        A-Heading(tag='span' content='Tyler Pfledderer' class='text-white font-heading ms-2')
       //- Mobile menu toggle
       button(class='bg-gray-600 rounded-md cursor-pointer w-11 h-11 py-[10px] px-2 active:bg-gray-700' @click='toggleNav()')
         div(
@@ -26,7 +27,7 @@
     div(
       class='fixed left-0 z-50 flex flex-col w-full overflow-hidden transition-all duration-300 bg-white flex-center nav-mobile-h-adjust'
       :class='menuOpen ? "max-h-full opacity-100" : "max-h-0 opacity-0"'
-      @click='clickedMobileLink($event)'
+      @click='hideNavMenuOnClickedLink($event)'
     )
       M-NavLinks
       M-SocialLinks(class='mt-14')
@@ -87,7 +88,8 @@ export default {
      * Method that checks if browser is in mobile screen size and if a nav or social link is clicked.
      * If both above are true, close the nav menu
      */
-    clickedMobileLink({ target }) {
+    hideNavMenuOnClickedLink({ target }) {
+      console.log(this);
       if (this.windowWidth < 500 && target.tagName !== 'DIV') {
         // Set menuOpen to false to trigger the menu to hide
         this.menuOpen = false;

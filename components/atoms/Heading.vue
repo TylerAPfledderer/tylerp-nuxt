@@ -1,5 +1,5 @@
 <template lang="pug">
-  component(:is='tag') {{ content }}
+  component(:is='tag' :aria-hidden='tag === "span"') {{ content }}
 </template>
 <script>
 export default {
@@ -8,7 +8,7 @@ export default {
       required: true,
       type: String,
       validator(value) {
-        return ['h1', 'h2', 'h3'].includes(value);
+        return ['h1', 'h2', 'h3', 'span'].includes(value);
       },
     },
     content: {

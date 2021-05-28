@@ -8,13 +8,9 @@
         )
       Section#skill(sectionTitle='Know My Tools')
         O-SkillList
+        A-Button(class='m-auto mt-6' buttonType='nuxtLink' path='/projects' appearance='cta' content='See My Works' hasIcon)
 </template>
 
 <script>
 export default {};
 </script>
-<style lang="postcss">
-section:nth-of-type(odd) {
-  @apply bg-dark text-white;
-}
-</style>

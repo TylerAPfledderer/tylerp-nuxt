@@ -25,6 +25,7 @@ export default {
           'linkedin',
           'nuxt',
           'gatsby',
+          'styled-components',
         ].includes(value);
       },
     },

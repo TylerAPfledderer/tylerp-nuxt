@@ -6,7 +6,7 @@
   h1,
   h2,
   h3 {
-    @apply text-center font-heading;
+    @apply font-heading;
   }
 
   h1 {
@@ -14,15 +14,19 @@
   }
 
   h2 {
-    @apply ms-4;
+    @apply font-bold ms-4;
   }
 
   h3 {
     @apply font-semibold ms-2;
   }
 
+  body {
+    @apply text-center text-gray-800 font-body;
+  }
+
   p {
-    @apply mb-6 font-body;
+    @apply mb-6;
   }
 
   @screen sm {
@@ -43,9 +47,12 @@
 }
 
 /* Nuxt Special Classes */
-.nuxt-link-active {
+.nuxt-link-exact-active {
+  /** 
+   * TODO: Refine this class styling, as the 'Title name' is also effected
+   * There is an override, but maybe you can't rely on that?  
+   */
   color: red !important;
-  transform: scale(1.1);
 }
 
 .page-enter-active,
