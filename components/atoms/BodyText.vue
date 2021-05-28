@@ -1,5 +1,5 @@
 <template lang="pug">
-  p {{ content }}
+  p(v-html='content')
 </template>
 <script>
 export default {

@@ -1,5 +1,5 @@
 <template lang="pug">
-  nav(class='relative w-full' :class='test')
+  nav(class='fixed top-0 z-50 w-full' :class='test')
     //- Heading area of navbar
     //-   Mobile View: Header and menu toggle visible
     //-   Larger View: Header inline with navlinks
@@ -24,14 +24,15 @@
             :class='menuOpen && "transform -rotate-45 translate-x-[4px]"'
           )
     div(
-      class='fixed left-0 z-50 flex flex-col w-full overflow-hidden transition-all duration-500 bg-white flex-center nav-mobile-h-adjust'
+      class='fixed left-0 z-50 flex flex-col w-full overflow-hidden transition-all duration-300 bg-white flex-center nav-mobile-h-adjust'
       :class='menuOpen ? "max-h-full opacity-100" : "max-h-0 opacity-0"'
-      @click='clickedLink($event)'
+      @click='clickedMobileLink($event)'
     )
       M-NavLinks
       M-SocialLinks(class='mt-14')
 </template>
 <script>
+import disableScroll from 'disable-scroll';
 export default {
   data() {
     return {
@@ -71,6 +72,11 @@ export default {
   methods: {
     toggleNav() {
       this.menuOpen = !this.menuOpen;
+      if (this.menuOpen) {
+        disableScroll.on();
+      } else {
+        disableScroll.off();
+      }
     },
     // CURRENTLY NOT USED
     // Updated the data value of the browser window's width
@@ -81,9 +87,12 @@ export default {
      * Method that checks if browser is in mobile screen size and if a nav or social link is clicked.
      * If both above are true, close the nav menu
      */
-    clickedLink({ target }) {
-      if (this.windowWidth < 500 && target.tagName === 'A') {
+    clickedMobileLink({ target }) {
+      if (this.windowWidth < 500 && target.tagName !== 'DIV') {
+        // Set menuOpen to false to trigger the menu to hide
         this.menuOpen = false;
+        // Ensure body scrolling is enabled.
+        disableScroll.off();
       }
     },
   },

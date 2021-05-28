@@ -1,6 +1,12 @@
+import path from 'path';
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+  server: {
+    port: 8000,
+    host: '0.0.0.0',
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -29,7 +35,7 @@ export default {
   googleFonts: {
     families: {
       'Titillium+Web': {
-        wght: [700, 900],
+        wght: [600, 700, 900],
       },
       Mulish: {
         wght: [500, 700],
@@ -42,7 +48,7 @@ export default {
     display: 'swap',
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~/assets/css/tailwind.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -106,6 +112,12 @@ export default {
     },
     babel: {
       plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],
+    },
+    postcss: {
+      plugins: {
+        tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
+        'postcss-nested': {},
+      },
     },
   },
 };

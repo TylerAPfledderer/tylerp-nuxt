@@ -1,8 +1,10 @@
 <template lang="pug">
-  nuxt-link(v-if='buttonType === "nuxtLink"' :to='path' :class='this.baseClasses' ) {{content}}
+  NuxtLink(v-if='buttonType === "nuxtLink"' :to='path' :class='this.baseClasses')
+    span {{content}}
     img(v-if='hasIcon' src='../../assets/icons/angle-right.svg' alt="" class='btn-icon')
   button(v-else-if='buttonType === "form"' :class='this.baseClasses') {{content}}
-  a(v-else :href='path' class='base' :class='this.baseClasses') {{content}}
+  a(v-else :href='path' class='base' :class='this.baseClasses')
+    span {{content}}
     img(v-if='hasIcon' src='../../assets/icons/external-link.svg' alt="" class='btn-icon')
 </template>
 <script>
@@ -63,23 +65,7 @@ export default {
    * 'text-center' - ensure centered text when icons are included
    * 'overflow-hidden' - to prevent icon animations from going outside of the button
   */
-  @apply bg-none
-    rounded
-    border-transparent
-    border-solid
-    border-4
-    text-gray-700
-    cursor-pointer
-    flex
-    justify-center
-    font-bold
-    text-base
-    py-2
-    px-4
-    text-center
-    overflow-hidden
-    max-w-[173px]
-    w-28;
+  @apply bg-none rounded border-transparent border-solid border-4 text-gray-700 cursor-pointer flex justify-center font-bold text-base py-2 px-4 text-center overflow-hidden max-w-[173px] min-w-[128px];
 
   /* Not allow stretch, and is enough length to cover all text used in this project */
   /* max-width: 150px; */

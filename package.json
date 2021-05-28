@@ -12,26 +12,29 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.3.5",
-    "core-js": "^3.9.1",
-    "nuxt": "^2.15.3",
+    "core-js": "^3.13.0",
+    "disable-scroll": "^0.6.0",
+    "nuxt": "^2.15.6",
     "polished": "^4.1.2",
     "prettier": "^2.3.0",
-    "tailwindcss-pseudo-elements": "^2.0.0"
+    "tailwindcss-pseudo-elements": "^2.0.0",
+    "vue-frag": "^1.1.5"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^6.0.0",
+    "@nuxtjs/eslint-config": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/google-fonts": "^1.3.0",
     "@nuxtjs/svg": "^0.1.12",
-    "@nuxtjs/tailwindcss": "^4.1.1",
-    "autoprefixer": "^9.8.6",
+    "@nuxtjs/tailwindcss": "^4.1.2",
+    "autoprefixer": "^10.2.6",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.22.0",
+    "eslint": "^7.27.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.7.0",
-    "postcss": "^7.0.35",
+    "postcss": "^8.3.0",
+    "postcss-nested": "^5.0.5",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
+    "tailwindcss": "^2.1.2"
   }
 }

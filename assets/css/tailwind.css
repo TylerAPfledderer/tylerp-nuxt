@@ -6,11 +6,11 @@
   h1,
   h2,
   h3 {
-    @apply text-center;
+    @apply text-center font-heading;
   }
 
   h1 {
-    @apply font-black tracking-wide font-heading ms-5;
+    @apply font-black tracking-wide ms-5;
   }
 
   h2 {
@@ -18,7 +18,7 @@
   }
 
   h3 {
-    @apply ms-3;
+    @apply font-semibold ms-2;
   }
 
   p {
@@ -46,4 +46,13 @@
 .nuxt-link-active {
   color: red !important;
   transform: scale(1.1);
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
 }
