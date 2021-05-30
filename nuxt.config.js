@@ -80,6 +80,8 @@ export default {
     '@nuxtjs/google-fonts',
     // https://github.com/nuxt-community/svg-module
     '@nuxtjs/svg',
+    // https://composition-api.nuxtjs.org/
+    '@nuxtjs/composition-api/module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -97,6 +99,7 @@ export default {
 
   generate: {
     fallback: '404.html',
+    interval: 2000,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

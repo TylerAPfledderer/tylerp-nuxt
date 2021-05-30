@@ -9,14 +9,6 @@ export default {
     return {
       links: [
         {
-          url: '/#about',
-          name: 'About',
-        },
-        {
-          url: '/#skills',
-          name: 'Skills',
-        },
-        {
           url: '/projects',
           name: 'Projects',
         },
