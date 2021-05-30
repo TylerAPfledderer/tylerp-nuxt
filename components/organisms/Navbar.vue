@@ -1,5 +1,5 @@
 <template lang="pug">
-  nav(class='fixed top-0 z-50 w-full' :class='test')
+  nav(class='fixed top-0 z-50 w-full')
     //- Heading area of navbar
     //-   Mobile View: Header and menu toggle visible
     //-   Larger View: Header inline with navlinks
@@ -54,19 +54,6 @@ export default {
       menuOpen,
       toggleNav,
     };
-  },
-  computed: {
-    test() {
-      if (process.client) {
-        if (this.$vssWidth < 500) {
-          return console.log('This window is small.');
-        } else {
-          return console.log('This window is big!');
-        }
-      } else {
-        return null;
-      }
-    },
   },
   methods: {
     /**
