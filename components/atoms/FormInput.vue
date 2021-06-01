@@ -1,17 +1,39 @@
 <template lang="pug">
-  textarea(v-if='isTextArea' :name='`user-${inputId}`' class='h-24 base' :id='inputId' ref='inputRef' @blur='sendValue')
-  input(v-else :input='inputType' :id='inputId' :name='`user-${inputId}`' ref='inputRef' @blur='sendValue' class='base')
+  textarea(
+    v-if='isTextArea'
+    class='h-24 input-base'
+    :id='inputId'
+    :name='`user-${inputId}`'
+    v-model='inputVal'
+  )
+  input(
+    v-else
+    class='input-base'
+    :id='inputId'
+    :name='`user-${inputId}`'
+    :type='inputType'
+    v-model='inputVal'
+  )
+  //- v-model applied to element to run computed property on value change
 </template>
 <script>
 export default {
+  /**
+   * Credit to this stackOverflow answer on passing data to the parent with v-model
+   * https://stackoverflow.com/a/47312172/14374568
+   */
   props: {
-    isTextArea: {
-      default: false,
-      type: Boolean,
+    value: {
+      type: String,
+      default: '',
     },
     inputId: {
-      required: true,
       type: String,
+      required: true,
+    },
+    isTextArea: {
+      type: Boolean,
+      default: false,
     },
     inputType: {
       default: null,
@@ -44,16 +66,26 @@ export default {
       },
     },
   },
-  methods: {
-    // Send input value up to parent that defines that data entered
-    sendValue({ target }) {
-      this.$emit('send-value', [target.value, this.$refs.inputRef]);
+  computed: {
+    // Sending input value data back up to the parent component via 'v-model'
+    inputVal: {
+      get() {
+        return this.value;
+      },
+      // Setter grabbing value from getter
+      set(val) {
+        /**
+         * The $emit 'event' name has to equal '@input'
+         * which is a part of v-model tied to the parent component
+         */
+        this.$emit('input', val);
+      },
     },
   },
 };
 </script>
 <style lang="postcss" scoped>
-.base {
-  @apply py-[5px] px-2 border-[5px] border-transparent rounded shadow-md focus:border-[#FFB700] focus:outline-none;
+.input-base {
+  @apply py-[5px] px-2 border border-gray-500 rounded-sm shadow focus:border-[#FFB700] focus:outline-none;
 }
 </style>

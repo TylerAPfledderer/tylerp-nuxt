@@ -50,6 +50,7 @@ module.exports = {
           dark: darken(0.42, colors.white),
         },
         'focus-border': '#333',
+        error: '#f00',
       },
       spacing: {
         'screen-width': '100vw',
