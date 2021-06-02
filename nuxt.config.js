@@ -25,9 +25,6 @@ export default {
       { name: 'author', content: 'Tyler Pfledderer' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [
-      { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' },
-    ],
   },
   vue: {
     config: {
@@ -54,7 +51,7 @@ export default {
   css: ['~/assets/css/tailwind.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/netlifyCMS'],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [
@@ -91,7 +88,12 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    // https://content.nuxtjs.org/
+    '@nuxt/content',
   ],
+
+  // Nuxt Content: https://content.nuxtjs.org/configuration
+  content: [],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
