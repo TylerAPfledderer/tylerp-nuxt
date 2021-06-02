@@ -2,12 +2,24 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 publish_mode: editorial_workflow
-media_folder: 'images/uploads' # Media files will be stored in the repo under images/uploads
+media_folder: 'static/images' # Media files will be stored in the repo under images/uploads
+public_folder: '/images'
 collections:
   - name: 'projects'
     label: 'Projects'
-    folder: '_projects'
-    create: false
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    folder: 'content/projects'
+    format: 'frontmatter'
+    create: true
+    preview_path: '/projects'
     fields: # The fields for each document, usually in front matter
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog' }
+      - {
+          label: 'Layout',
+          name: 'layout',
+          widget: 'hidden',
+          default: 'projects',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Preview Image', name: 'preview-img', widget: 'image' }
+      - { label: 'Link to Project Demo', name: 'demo-url', widget: 'string' }
+      - { Label: 'Programming Tools Used', name: 'tags', widget: 'string' }

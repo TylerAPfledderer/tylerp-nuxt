@@ -6,39 +6,11 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      projects: [
-        {
-          title: 'Project Name',
-          icons: ['bootstrap', 'sass', 'html', 'js'],
-          imageName: 'data-dash-preview',
-          description: 'This is a project that was made. Duh!',
-          demoUrl: 'https://www.example.com',
-        },
-        {
-          title: 'Project Name',
-          icons: ['bootstrap', 'sass', 'html', 'js'],
-          imageName: 'data-dash-preview',
-          description: 'This is a project that was made. Duh!',
-          demoUrl: 'https://www.example.com',
-        },
-        {
-          title: 'Project Name',
-          icons: ['bootstrap', 'sass', 'html', 'js'],
-          imageName: 'data-dash-preview',
-          description: 'This is a project that was made. Duh!',
-          demoUrl: 'https://www.example.com',
-        },
-        {
-          title: 'Project Name',
-          icons: ['bootstrap', 'sass', 'html', 'js'],
-          imageName: 'data-dash-preview',
-          description: 'This is a project that was made. Duh!',
-          demoUrl: 'https://www.example.com',
-        },
-      ],
-    };
+  props: {
+    projects: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>

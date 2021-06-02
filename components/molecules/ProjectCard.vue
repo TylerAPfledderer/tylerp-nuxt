@@ -3,11 +3,11 @@
   section(class='flex flex-col h-full overflow-hidden bg-white shadow-md rounded-xl max-w-[336px] min-w-[272px] text-black')
     A-Image(
       class='w-full h-[160px] object-cover object-center-top'
-      :imgPath='require(`assets/images/project-previews/${project.imageName}.png`)'
+      :imgPath='project.previewImg'
     )
     div(class='flex flex-col items-center h-full p-6')
       div(class='flex items-center mb-6')
-        A-Icon(v-for='(name, index) in project.icons' :key='index' :icon='name' :class='index !== 0 && "ml-2"')
+        A-Icon(v-for='(name, index) in project.tags' :key='index' :icon='name' :class='index !== 0 && "ml-2"')
       A-Heading(tag='h2' :content='project.title' class='mb-2 font-normal text-gray-700 font-body')
       A-BodyText(:content='project.description')
       div(class='flex flex-col items-center mt-auto')
@@ -23,10 +23,10 @@ export default {
       title: {
         type: String,
       },
-      icons: {
+      tags: {
         type: Array,
       },
-      imageName: {
+      previewImg: {
         type: String,
       },
       description: {
