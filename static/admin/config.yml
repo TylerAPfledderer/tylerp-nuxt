@@ -20,6 +20,6 @@ collections:
         }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Preview Image', name: 'preview-img', widget: 'image' }
-      - { label: 'Link to Project Demo', name: 'demo-url', widget: 'string' }
-      - { Label: 'Programming Tools Used', name: 'tags', widget: 'string' }
+      - { label: 'Preview Image', name: 'previewImg', widget: 'image' }
+      - { label: 'Link to Project Demo', name: 'demoUrl', widget: 'string' }
+      - { Label: 'Programming Tools Used', name: 'tags', widget: 'list' }
