@@ -29,19 +29,17 @@
     @apply mb-6;
   }
 
-  @screen sm {
+  @screen md {
     h1 {
       @apply ms-7;
     }
-  }
 
-  @screen md {
     h2 {
       @apply ms-6;
     }
 
     h3 {
-      @apply ms-5;
+      @apply ms-4;
     }
   }
 }
@@ -52,7 +50,7 @@
    * TODO: Refine this class styling, as the 'Title name' is also effected
    * There is an override, but maybe you can't rely on that?  
    */
-  color: red !important;
+  color: #eb0000 !important;
 }
 
 .page-enter-active,

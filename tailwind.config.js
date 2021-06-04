@@ -35,6 +35,14 @@ module.exports = {
       3: theme('spacing.16'),
     }),
     modularScale: { ratio: 1.2 },
+    screens: {
+      xs: '375px',
+      sm: '425px',
+      md: '640px',
+      lg: '768px',
+      xl: '1024px',
+      '2xl': '1280px',
+    },
     extend: {
       colors: {
         dark: {
@@ -83,9 +91,6 @@ module.exports = {
       animation: {
         swell: 'swell 0.5s infinite',
         waggleScale: 'waggleScale forwards .5s',
-      },
-      screens: {
-        xs: '375px',
       },
       backgroundImage: () => ({
         // Error icon that appears next to invalid input field in FormPair component
