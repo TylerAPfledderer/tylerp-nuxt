@@ -3,7 +3,7 @@
     span {{content}}
     img(v-if='hasIcon' src='../../assets/icons/angle-right.svg' alt="" class='btn-icon')
   button(v-else-if='buttonType === "form"' :class='this.baseClasses') {{content}}
-  a(v-else :href='path' class='base' :class='this.baseClasses')
+  a(v-else :href='path' rel="noreferrer" class='base' :class='this.baseClasses')
     span {{content}}
     img(v-if='hasIcon' src='../../assets/icons/external-link.svg' alt="" class='btn-icon')
 </template>

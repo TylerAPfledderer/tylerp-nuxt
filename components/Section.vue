@@ -1,7 +1,8 @@
 <template lang="pug">
-  section(class='px-6 py-8')
-    A-Heading(tag='h2' :content='sectionTitle' class='mb-6')
-    slot
+  section(class='px-4 py-8 sm:py-12 sm:px-16')
+    div(class='page-max-w')
+      A-Heading(tag='h2' :content='sectionTitle' class='mb-6')
+      slot
 </template>
 <script>
 export default {

@@ -1,9 +1,9 @@
 <template lang="pug">
-  ul
+  ul(class='inline-flex flex-wrap justify-center gap-y-8 md:gap-y-12 lg:gap-x-4 xl:gap-6')
     li(
       v-for='(skill, index) in skills'
       :key='index'
-      :class='index !== 0 && "mt-20"'
+      class='m-[6px]'
     )
       M-SkillCard(:skill='skill')
 </template>

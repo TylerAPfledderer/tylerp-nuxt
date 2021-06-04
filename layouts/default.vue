@@ -1,9 +1,11 @@
 <template lang="pug">
-  div(class='mt-[60px] flex flex-col justify-between min-height-adjustment')
+  div(class='mt-[80px] flex flex-col justify-between min-height-adjustment overflow-hidden')
     O-Navbar
     Nuxt
-    footer(class='py-2 text-white bg-gray-700')
-      span(class='tracking-wider') {{`Copyright ${currYear} Tyler Pfledderer`}}
+    footer(class='px-4 py-2 text-white bg-gray-700')
+      div(class='flex page-max-w flex-center md:justify-between')
+        span(class='tracking-wider') {{`Copyright ${currYear} Tyler Pfledderer`}}
+        M-SocialLinks(class='hidden md:flex')
 </template>
 <script>
 export default {
@@ -15,11 +17,11 @@ export default {
 };
 </script>
 <style lang="postcss">
-.min-height-adjustment {
-  min-height: calc(100vh - 60px);
+.page-max-w {
+  @apply max-w-7xl m-auto;
 }
 
-main > section:nth-of-type(odd):not(div) {
-  @apply bg-dark text-white;
+.min-height-adjustment {
+  min-height: calc(100vh - 80px);
 }
 </style>

@@ -1,6 +1,6 @@
 <template lang="pug">
-  div(class='flex flex-col items-center w-full max-w-[369px]')
-    div(class='flex mb-2 flex-center')
+  div(class='flex flex-col items-center lg:w-[369px]')
+    div(class='flex mb-3 flex-center')
       A-Icon(
         v-for='(logo, index) in skill.logos'
         :key='index'
