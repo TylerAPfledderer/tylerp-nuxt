@@ -1,8 +1,9 @@
 <template lang="pug">
-  main
+  MainWrap
     Section(sectionTitle='My Works')
       A-BodyText(
         content='Learning involves a cumulation of knowledge. See below my projects using fundamental code, or use of frameworks and libraries like ReactJS and Bootstrap.'
+        class='mb-12'
       )
       O-ProjectList(:projects='projects')
       div(class='mt-6')

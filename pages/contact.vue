@@ -1,42 +1,43 @@
 <template lang="pug">
-  Section(sectionTitle='Reach Out!')
-    A-BodyText(
-      content='I am available for private consultation with web design and development, or if you need a new developer on your team! Simply fill out the form below and I will contact you in the next 24-48 hours.<br/><strong>Thank you!</strong>'
-    )
-    form(
-      class='max-w-[400px]'
-      @submit='checkSubmit'
-      action='https://vuejs.org'
-      method='POST'
-      novalidate='true'
-    )
-      //- Input field for Full Name
-      M-FormPair(
-        :isError='errors.name'
-        pairId='name'
-        label='Full Name'
-        inputType='text'
-        v-model='name'
+  MainWrap
+    Section(sectionTitle='Reach Out!')
+      A-BodyText(
+        content='I am available for private consultation with web design and development, or if you need a new developer on your team! Simply fill out the form below and I will contact you in the next 24-48 hours.<br/><strong>Thank you!</strong>'
       )
-      //- Input field for Email
-      M-FormPair(
-        :isError='errors.email'
-        pairId='email'
-        label='Email Address'
-        inputType='email'
-        v-model='email'
+      form(
+        class='max-w-[400px]'
+        @submit='checkSubmit'
+        action='https://vuejs.org'
+        method='POST'
+        novalidate='true'
       )
-      //- Multiline field for User Message
-      M-FormPair(
-        isTextArea
-        :isError='errors.message'
-        pairId='message'
-        label='Your Message'
-        v-model='message'
-      )
+        //- Input field for Full Name
+        M-FormPair(
+          :isError='errors.name'
+          pairId='name'
+          label='Full Name'
+          inputType='text'
+          v-model='name'
+        )
+        //- Input field for Email
+        M-FormPair(
+          :isError='errors.email'
+          pairId='email'
+          label='Email Address'
+          inputType='email'
+          v-model='email'
+        )
+        //- Multiline field for User Message
+        M-FormPair(
+          isTextArea
+          :isError='errors.message'
+          pairId='message'
+          label='Your Message'
+          v-model='message'
+        )
 
-      div(class='flex mt-4 flex-center')
-        A-Button(buttonType='form' type='submit' appearance='primary' content='Send')
+        div(class='flex mt-4 flex-center')
+          A-Button(buttonType='form' type='submit' appearance='primary' content='Send')
 </template>
 <script>
 export default {
