@@ -30,7 +30,7 @@ export default {
     hostname: 'https://tylerpweb-nuxt.netlify.app'
   },
   robots: {
-    Sitemap: '/sitemap.xml',
+    Sitemap: 'https://tylerpweb-nuxt.netlify.app/sitemap.xml',
     UserAgent: '*',
     Disallow: '/admin'
   },
