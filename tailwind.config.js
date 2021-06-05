@@ -1,6 +1,10 @@
 const plugin = require('tailwindcss/plugin');
-const { darken, lighten } = require('polished');
+const {
+  darken,
+  lighten
+} = require('polished');
 const colors = require('tailwindcss/colors');
+const _ = require('lodash');
 
 module.exports = {
   mode: 'jit',
@@ -34,7 +38,9 @@ module.exports = {
       2: theme('spacing.12'),
       3: theme('spacing.16'),
     }),
-    modularScale: { ratio: 1.2 },
+    modularScale: {
+      ratio: 1.2
+    },
     screens: {
       xs: '375px',
       sm: '425px',
@@ -70,8 +76,12 @@ module.exports = {
       },
       keyframes: {
         swell: {
-          '50%': { transform: 'scale(1.2)' },
-          '100%': { transform: 'scale(1)' },
+          '50%': {
+            transform: 'scale(1.2)'
+          },
+          '100%': {
+            transform: 'scale(1)'
+          },
         },
         waggleScale: {
           '10%': {
@@ -113,7 +123,10 @@ module.exports = {
   },
   plugins: [
     // This Modular Scale plugin scheme courtesy of Rico Sta. Cruz - https://ricostacruz.com/til/another-look-at-tailwind
-    plugin(({ addUtilities, theme }) => {
+    plugin(({
+      addUtilities,
+      theme
+    }) => {
       const ratio = theme('modularScale.ratio');
       const leading = theme('lineHeight');
       addUtilities({
@@ -121,18 +134,47 @@ module.exports = {
           fontSize: `${ratio ** -1}rem`,
           lineHeight: leading[1],
         },
-        '.ms-1': { fontSize: `${ratio ** 1}rem`, lineHeight: leading[1] },
-        '.ms-2': { fontSize: `${ratio ** 2}rem`, lineHeight: leading[1] },
-        '.ms-3': { fontSize: `${ratio ** 3}rem`, lineHeight: leading[2] },
-        '.ms-4': { fontSize: `${ratio ** 4}rem`, lineHeight: leading[2] },
-        '.ms-5': { fontSize: `${ratio ** 5}rem`, lineHeight: leading[2] },
-        '.ms-6': { fontSize: `${ratio ** 6}rem`, lineHeight: leading[3] },
-        '.ms-7': { fontSize: `${ratio ** 7}rem`, lineHeight: leading[3] },
+        '.ms-1': {
+          fontSize: `${ratio ** 1}rem`,
+          lineHeight: leading[1]
+        },
+        '.ms-2': {
+          fontSize: `${ratio ** 2}rem`,
+          lineHeight: leading[1]
+        },
+        '.ms-3': {
+          fontSize: `${ratio ** 3}rem`,
+          lineHeight: leading[2]
+        },
+        '.ms-4': {
+          fontSize: `${ratio ** 4}rem`,
+          lineHeight: leading[2]
+        },
+        '.ms-5': {
+          fontSize: `${ratio ** 5}rem`,
+          lineHeight: leading[2]
+        },
+        '.ms-6': {
+          fontSize: `${ratio ** 6}rem`,
+          lineHeight: leading[3]
+        },
+        '.ms-7': {
+          fontSize: `${ratio ** 7}rem`,
+          lineHeight: leading[3]
+        },
       });
     }),
-    plugin(({ addVariant, e }) => {
-      addVariant('hover-focus', ({ modifySelectors, separator }) => {
-        modifySelectors(({ className }) => {
+    plugin(({
+      addVariant,
+      e
+    }) => {
+      addVariant('hover-focus', ({
+        modifySelectors,
+        separator
+      }) => {
+        modifySelectors(({
+          className
+        }) => {
           return `.${e(`hover-focus${separator}${className}`)}:hover, .${e(
             `hover-focus${separator}${className}`
           )}:focus`;
@@ -141,7 +183,9 @@ module.exports = {
     }),
     require('tailwindcss-pseudo-elements'),
     // Apply utility for a fully centered [group of] item(s) in flexbox
-    plugin(({ addUtilities }) => {
+    plugin(({
+      addUtilities
+    }) => {
       const newUtility = {
         '.flex-center': {
           'justify-content': 'center',
@@ -150,6 +194,23 @@ module.exports = {
       };
 
       addUtilities(newUtility, ['responsive']);
+    }),
+    // Render width and height of equal value
+    plugin(({
+      addUtilities,
+      theme,
+      e
+    }) => {
+      const squareShapeUtilities = _.map(theme('spacing'), (value, key) => {
+        return {
+          [`.${e(`square-${key}`)}`]: {
+            width: value,
+            height: value
+          }
+        };
+      });
+
+      addUtilities(squareShapeUtilities);
     }),
   ],
 };
