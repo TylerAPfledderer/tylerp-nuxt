@@ -1,5 +1,5 @@
 <template lang="pug">
-  ul(class='flex flex-center')
+  ul(class='flex flex-center' aria-label='Social Links')
     li(
       v-for='(link, index) in socialLinks'
       :key='index'

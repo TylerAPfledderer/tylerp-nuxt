@@ -1,5 +1,5 @@
 <template lang="pug">
-  nav(class='fixed top-0 z-50 w-full md:py-4 md:px-6 md:bg-white lg:px-16')
+  nav(class='fixed top-0 z-50 w-full md:py-4 md:px-6 md:bg-white lg:px-16' role='navigation')
     //- Heading area of navbar
     //-   Mobile View: Header and menu toggle visible
     //-   Larger View: Header inline with navlinks
@@ -8,7 +8,11 @@
         nuxt-link(to='/' @click.native='menuOpen && hideMobileNavOnClickedLink($event)')
           A-Heading(tag='span' content='Tyler Pfledderer' class='text-white font-heading ms-2 md:text-gray-700')
         //- Mobile menu toggle
-        button(class='bg-gray-600 rounded-md cursor-pointer w-11 h-11 py-[10px] px-2 active:bg-gray-700 md:hidden' @click='toggleNav()')
+        button(
+          class='bg-gray-600 rounded-md cursor-pointer w-11 h-11 py-[10px] px-2 active:bg-gray-700 md:hidden'
+          @click='toggleNav()'
+          aria-label='Page Navigation'
+          :aria-expanded='menuOpen ? "true" : "false"')
           div(
             class='flex flex-col items-center justify-between h-full transition-transform duration-300'
             :class='menuOpen && "transform rotate-180"'
@@ -62,8 +66,7 @@ export default {
      * If both above are true, close the nav menu
      */
     hideMobileNavOnClickedLink({ target }) {
-      console.log('hideMobileNavOnClickedLink triggered');
-      if (this.$vssWidth < 500 && target.tagName !== 'DIV') {
+      if (this.$vssWidth < 640 && target.tagName !== 'DIV') {
         // Set menuOpen to false to trigger the menu to hide
         this.menuOpen = false;
         // Ensure body scrolling is enabled.
