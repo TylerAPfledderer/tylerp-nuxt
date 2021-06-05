@@ -26,6 +26,14 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+  sitemap: {
+    hostname: 'https://tylerpweb-nuxt.netlify.app'
+  },
+  robots: {
+    Sitemap: '/sitemap.xml',
+    UserAgent: '*',
+    Disallow: '/admin'
+  },
   vue: {
     config: {
       devtools: true,
@@ -82,6 +90,20 @@ export default {
     '@nuxtjs/svg',
     // https://composition-api.nuxtjs.org/
     '@nuxtjs/composition-api/module',
+    // https://github.com/AlekseyPleshkov/nuxt-social-meta
+    [
+      'nuxt-social-meta',
+      {
+        url: 'https://tylerpweb-nuxt.netlify.app',
+        title: 'Title',
+        site_name: 'Site name',
+        description: 'Portfolio Site of Tyler Pfledderer, Web Development. Building Efficient and accessible websites with Vue, React, WordPress, and more!',
+        img: '/icon.png',
+        locale: 'en_US',
+        twitter: '@t_pfledderer',
+        twitter_card: 'summary_large_image',
+      },
+    ],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -90,6 +112,10 @@ export default {
     '@nuxtjs/pwa',
     // https://content.nuxtjs.org/
     '@nuxt/content',
+    // https://sitemap.nuxtjs.org/
+    '@nuxtjs/sitemap',
+    // https://github.com/nuxt-community/robots-module
+    '@nuxtjs/robots'
   ],
 
   // Nuxt Content: https://content.nuxtjs.org/configuration
