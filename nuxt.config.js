@@ -80,6 +80,8 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
@@ -108,8 +110,6 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
     // https://content.nuxtjs.org/
     '@nuxt/content',
     // https://sitemap.nuxtjs.org/
@@ -126,6 +126,9 @@ export default {
     manifest: {
       lang: 'en',
     },
+    meta: {
+      theme_color: '#297b91'
+    }
   },
 
   generate: {
