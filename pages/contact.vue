@@ -50,6 +50,11 @@ export default {
       message: '',
     };
   },
+  head() {
+    return {
+      title: 'Reach Out!',
+    };
+  },
   methods: {
     checkSubmit(event) {
       this.errors = {};

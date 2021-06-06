@@ -21,6 +21,11 @@ export default {
       projects,
     };
   },
+  head() {
+    return {
+      title: 'My Works',
+    };
+  },
 };
 </script>
 <style lang="postcss" scoped></style>

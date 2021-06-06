@@ -10,21 +10,32 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'tylerpweb-nuxtalt',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          'Portfolio Site of Tyler Pfledderer, Web Development. Building Efficient and accessible websites with Vue, React, WordPress, and more!',
-      },
-      { name: 'robots', content: 'index. nofollow' },
-      { name: 'revisit-after', content: '30 days' },
-      { name: 'author', content: 'Tyler Pfledderer' },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    title: 'Web Developer',
+    titleTemplate: 'Tyler Pfledderer | %s',
+    meta: [{
+      charset: 'utf-8'
+    }, {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1'
+    }, {
+      hid: 'description',
+      name: 'description',
+      content: 'Portfolio Site of Tyler Pfledderer, Web Development. Building Efficient and accessible websites with Vue, React, WordPress, and more!',
+    }, {
+      name: 'robots',
+      content: 'index. nofollow'
+    }, {
+      name: 'revisit-after',
+      content: '30 days'
+    }, {
+      name: 'author',
+      content: 'Tyler Pfledderer'
+    }],
+    link: [{
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico'
+    }],
   },
   sitemap: {
     hostname: 'https://tylerpweb-nuxt.netlify.app'
@@ -97,10 +108,9 @@ export default {
       'nuxt-social-meta',
       {
         url: 'https://tylerpweb-nuxt.netlify.app',
-        title: 'Title',
-        site_name: 'Site name',
+        title: 'Tyler Pfledderer - Web Developer',
         description: 'Portfolio Site of Tyler Pfledderer, Web Development. Building Efficient and accessible websites with Vue, React, WordPress, and more!',
-        img: '/icon.png',
+        img: 'icon.png',
         locale: 'en_US',
         twitter: '@t_pfledderer',
         twitter_card: 'summary_large_image',
@@ -148,7 +158,11 @@ export default {
       });
     },
     babel: {
-      plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],
+      plugins: [
+        ['@babel/plugin-proposal-private-methods', {
+          loose: true
+        }]
+      ],
     },
     postcss: {
       plugins: {
