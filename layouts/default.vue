@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(class='mt-[80px] flex flex-col justify-between min-height-adjustment overflow-hidden')
+  div(class='mt-[60px] min-h-[calc(100vh-60px)] md:mt-[80px] md:min-h-[calc(100vh-80px)] flex flex-col justify-between overflow-hidden')
     O-Navbar
     Nuxt
     footer(class='px-4 py-2 text-white bg-gray-700')
@@ -19,9 +19,5 @@ export default {
 <style lang="postcss">
 .page-max-w {
   @apply max-w-7xl m-auto;
-}
-
-.min-height-adjustment {
-  min-height: calc(100vh - 80px);
 }
 </style>
