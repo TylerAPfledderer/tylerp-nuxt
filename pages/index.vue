@@ -3,13 +3,12 @@
     M-Hero(class='hero-slanted-edge')
     MainWrap
       Section#about(sectionTitle='Who Am I?' class='relative z-[-100] !py-16')
-        div
+        div(class='flex justify-center')
+          i(v-html='require("~/assets/icons/source-code.svg?raw")' class='hidden w-48 mr-6 xl:block')
           A-BodyText(
             content='I am a front-end web developer, building unique and elegant websites with a focus in accessibility. I seek out problems in accessibility and efficient structure to provide sites that are fast, reliable and usable, while letting the personality of the business shine. I am curious about design and learning UX/UI fundamentals to help build better code.'
-            class='max-w-lg m-auto'
+            class='max-w-lg'
           )
-          i
-            //- Add undraw image https://undraw.co/illustrations
       Section#skill(sectionTitle='Know My Tools' class='skill-slanted-edge')
         O-SkillList
         A-Button(class='m-auto mt-6' buttonType='nuxtLink' path='/projects' appearance='cta' content='See My Works' hasIcon)
