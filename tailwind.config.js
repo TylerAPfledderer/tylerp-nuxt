@@ -65,6 +65,7 @@ module.exports = {
         },
         'focus-border': '#333',
         error: '#f00',
+        inherit: 'inherit'
       },
       spacing: {
         'screen-width': '100vw',

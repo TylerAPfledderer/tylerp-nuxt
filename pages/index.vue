@@ -1,8 +1,8 @@
 <template lang="pug">
   Fragment
-    M-Hero
+    M-Hero(class='hero-slanted-edge')
     MainWrap
-      Section#about(sectionTitle='Who Am I?' class='relative slanted-edge')
+      Section#about(sectionTitle='Who Am I?' class='relative z-[-100] !py-16')
         div
           A-BodyText(
             content='I am a front-end web developer, building unique and elegant websites with a focus in accessibility. I seek out problems in accessibility and efficient structure to provide sites that are fast, reliable and usable, while letting the personality of the business shine. I am curious about design and learning UX/UI fundamentals to help build better code.'
@@ -10,7 +10,7 @@
           )
           i
             //- Add undraw image https://undraw.co/illustrations
-      Section#skill(sectionTitle='Know My Tools')
+      Section#skill(sectionTitle='Know My Tools' class='skill-slanted-edge')
         O-SkillList
         A-Button(class='m-auto mt-6' buttonType='nuxtLink' path='/projects' appearance='cta' content='See My Works' hasIcon)
 </template>
@@ -28,11 +28,21 @@ export default {
 </script>
 <style lang="postcss" scoped>
 @screen md {
-  .slanted-edge {
-    @apply pt-4 mt-12;
+  .hero-slanted-edge {
+    @apply mt-12 relative bg-white;
+
+    &::after {
+      --tw-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2) !important;
+      @apply empty-content h-full bg-inherit w-screen absolute left-0 bottom-[-1vw] transform skew-y-1 block z-[-1] shadow;
+    }
   }
-  .slanted-edge:before {
-    @apply empty-content h-52 w-screen bg-dark absolute left-0 top-[-2vw] transform -skew-y-2 block z-[-100];
+
+  .skill-slanted-edge {
+    @apply relative bg-white;
+    &::before {
+      --tw-shadow: 0 -10px 10px 0 rgba(0, 0, 0, 0.2) !important;
+      @apply empty-content h-full bg-inherit w-screen absolute left-0 top-[-1vw] z-[-10] transform skew-y-1 shadow;
+    }
   }
 }
 </style>
