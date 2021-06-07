@@ -116,6 +116,8 @@ export default {
         twitter_card: 'summary_large_image',
       },
     ],
+    // https://image.nuxtjs.org/
+    '@nuxt/image'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

@@ -4,6 +4,8 @@
     A-Image(
       class='w-full h-[160px] object-cover object-center-top'
       :imgPath='project.previewImg'
+      width='336'
+      height='336'
     )
     div(class='flex flex-col items-center h-full p-6')
       div(class='flex items-center mb-6')
