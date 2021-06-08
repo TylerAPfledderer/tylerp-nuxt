@@ -12,38 +12,48 @@ export default {
   head: {
     title: 'Web Developer',
     titleTemplate: 'Tyler Pfledderer | %s',
-    meta: [{
-      charset: 'utf-8'
-    }, {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1'
-    }, {
-      hid: 'description',
-      name: 'description',
-      content: 'Portfolio Site of Tyler Pfledderer, Web Development. Building Efficient and accessible websites with Vue, React, WordPress, and more!',
-    }, {
-      name: 'robots',
-      content: 'index. nofollow'
-    }, {
-      name: 'revisit-after',
-      content: '30 days'
-    }, {
-      name: 'author',
-      content: 'Tyler Pfledderer'
-    }],
-    link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    }],
+    meta: [
+      {
+        charset: 'utf-8',
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Portfolio Site of Tyler Pfledderer, Web Development. Building Efficient and accessible websites with Vue, React, WordPress, and more!',
+      },
+      {
+        name: 'robots',
+        content: 'index. nofollow',
+      },
+      {
+        name: 'revisit-after',
+        content: '30 days',
+      },
+      {
+        name: 'author',
+        content: 'Tyler Pfledderer',
+      },
+    ],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico',
+      },
+    ],
   },
   sitemap: {
-    hostname: 'https://tylerpweb-nuxt.netlify.app'
+    hostname: 'https://tylerpweb-nuxt.netlify.app',
   },
   robots: {
     Sitemap: 'https://tylerpweb-nuxt.netlify.app/sitemap.xml',
     UserAgent: '*',
-    Disallow: '/admin'
+    Disallow: '/admin',
   },
   vue: {
     config: {
@@ -109,7 +119,8 @@ export default {
       {
         url: 'https://tylerpweb-nuxt.netlify.app',
         title: 'Tyler Pfledderer - Web Developer',
-        description: 'Portfolio Site of Tyler Pfledderer, Web Development. Building Efficient and accessible websites with Vue, React, WordPress, and more!',
+        description:
+          'Portfolio Site of Tyler Pfledderer, Web Development. Building Efficient and accessible websites with Vue, React, WordPress, and more!',
         img: 'icon.png',
         locale: 'en_US',
         twitter: '@t_pfledderer',
@@ -117,7 +128,7 @@ export default {
       },
     ],
     // https://image.nuxtjs.org/
-    '@nuxt/image'
+    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -127,7 +138,7 @@ export default {
     // https://sitemap.nuxtjs.org/
     '@nuxtjs/sitemap',
     // https://github.com/nuxt-community/robots-module
-    '@nuxtjs/robots'
+    '@nuxtjs/robots',
   ],
 
   // Nuxt Content: https://content.nuxtjs.org/configuration
@@ -139,8 +150,8 @@ export default {
       lang: 'en',
     },
     meta: {
-      theme_color: '#297b91'
-    }
+      theme_color: '#297b91',
+    },
   },
 
   generate: {
@@ -161,15 +172,17 @@ export default {
     },
     babel: {
       plugins: [
-        ['@babel/plugin-proposal-private-methods', {
-          loose: true
-        }]
+        [
+          '@babel/plugin-proposal-private-methods',
+          {
+            loose: true,
+          },
+        ],
       ],
     },
     postcss: {
       plugins: {
-        tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
-        'postcss-nesting': {},
+        'postcss-nested': {},
       },
     },
   },
