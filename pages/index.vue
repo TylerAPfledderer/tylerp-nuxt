@@ -28,7 +28,7 @@ export default {
 <style lang="postcss" scoped>
 @screen md {
   .hero-slanted-edge {
-    @apply mt-12 relative bg-white;
+    @apply relative bg-white;
 
     &::after {
       --tw-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2) !important;

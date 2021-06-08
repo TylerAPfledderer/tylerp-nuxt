@@ -1,5 +1,5 @@
 <template lang="pug">
-  component(:is='tag' :aria-hidden='tag === "span"') {{ content }}
+  component(:is='tag') {{ content }}
 </template>
 <script>
 export default {
