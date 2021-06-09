@@ -91,3 +91,6 @@ sw.*
 
 # VSCode Workspace declarations
 *.code-workspace
+
+# Local Netlify folder
+.netlify
