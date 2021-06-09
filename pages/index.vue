@@ -1,8 +1,8 @@
 <template lang="pug">
   Fragment
-    M-Hero(class='hero-slanted-edge')
+    M-Hero()
     MainWrap
-      Section#about(sectionTitle='Who Am I?' class='relative z-[-100] !py-16')
+      Section#about(sectionTitle='Who Am I?' class='relative !py-16 section-dark about-slanted-edge')
         div(class='flex justify-center')
           i(v-html='require("~/assets/icons/source-code.svg?raw")' class='hidden w-48 mr-6 xl:block')
           A-BodyText(
@@ -27,19 +27,19 @@ export default {
 </script>
 <style lang="postcss" scoped>
 @screen md {
-  .hero-slanted-edge {
+  .about-slanted-edge {
     @apply relative bg-white;
 
-    &::after {
-      --tw-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2) !important;
-      @apply empty-content h-full bg-inherit w-screen absolute left-0 bottom-[-1vw] transform skew-y-1 block z-[-1] shadow;
+    &::before {
+      --tw-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.2) !important;
+      @apply empty-content h-full bg-inherit w-screen absolute left-0 top-[-1vw] transform skew-y-1 block z-[-1] shadow;
     }
   }
 
   .skill-slanted-edge {
-    @apply relative bg-white;
+    @apply relative bg-white z-10;
     &::before {
-      --tw-shadow: 0 -10px 10px 0 rgba(0, 0, 0, 0.2) !important;
+      --tw-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.2) !important;
       @apply empty-content h-full bg-inherit w-screen absolute left-0 top-[-1vw] z-[-10] transform skew-y-1 shadow;
     }
   }

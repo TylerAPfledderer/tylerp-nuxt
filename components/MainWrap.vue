@@ -9,7 +9,7 @@ export default {};
 main > * {
   @apply flex-grow;
 }
-main > section:nth-of-type(odd):not(div) {
+.section-dark {
   @apply bg-dark text-white;
 }
 </style>

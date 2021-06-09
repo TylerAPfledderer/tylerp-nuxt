@@ -3,9 +3,10 @@
     Section(sectionTitle='Reach Out!')
       A-BodyText(
         content='I am available for private consultation with web design and development, or if you need a new developer on your team! Simply fill out the form below and I will contact you in the next 24-48 hours.<br/><strong>Thank you!</strong>'
+        class='max-w-md mx-auto'
       )
       form(
-        class='max-w-[400px]'
+        class='max-w-[400px] mx-auto'
         @submit='checkSubmit'
         action='https://vuejs.org'
         method='POST'

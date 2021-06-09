@@ -1,6 +1,6 @@
 <template lang="pug">
   div(
-    class='relative flex flex-col mb-2 text-left after:empty-content after:absolute after:right-2 after:top-[38px] after:w-4 after:h-4'
+    class='relative flex flex-col mb-4 text-left after:empty-content after:absolute after:right-2 after:top-[38px] after:w-4 after:h-4'
     :class='isError && "after:bg-error-icon"'
   )
     A-FormLabel(
