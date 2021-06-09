@@ -1,10 +1,7 @@
-import path from 'path';
-
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   server: {
-    port: 8000,
     host: '0.0.0.0',
   },
 
