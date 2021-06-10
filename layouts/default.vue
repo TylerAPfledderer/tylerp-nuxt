@@ -5,7 +5,7 @@
     footer(class='px-4 py-2 text-white bg-gray-700')
       div(class='flex page-max-w flex-center md:justify-between')
         span(class='tracking-wider') {{`Copyright ${currYear} Tyler Pfledderer`}}
-        M-SocialLinks(class='hidden md:flex')
+        M-SocialLinks(class='hidden md:flex' ariaId='social-links-footer')
 </template>
 <script>
 export default {

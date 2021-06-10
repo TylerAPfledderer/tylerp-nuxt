@@ -10,7 +10,7 @@
     div(class='flex flex-col items-center h-full p-6')
       div(class='flex items-center mb-6')
         A-Icon(v-for='(name, index) in project.tags' :key='index' :icon='name' :class='index !== 0 && "ml-2"')
-      A-Heading(tag='h2' :content='project.title' class='mb-2 font-normal text-gray-700 font-body')
+      A-Heading(tag='h3' :content='project.title' class='mb-2 font-normal text-gray-700 font-body')
       A-BodyText(:content='project.description')
       div(class='flex flex-col items-center mt-auto')
         span(class='mb-1') See it Live!

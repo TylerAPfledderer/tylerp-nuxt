@@ -8,8 +8,7 @@
       form(
         class='max-w-[400px] mx-auto'
         @submit='checkSubmit'
-        action='https://vuejs.org'
-        method='POST'
+        netlify
         novalidate='true'
       )
         //- Input field for Full Name

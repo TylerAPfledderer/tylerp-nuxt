@@ -1,5 +1,7 @@
 <template lang="pug">
-  ul(class='flex flex-center' aria-label='Social Links')
+div
+  h4(:id='ariaId' class='sr-only') Social Links
+  ul(class='flex flex-center' :aria-labelledby='ariaId')
     li(
       v-for='(link, index) in socialLinks'
       :key='index'
@@ -9,6 +11,12 @@
 </template>
 <script>
 export default {
+  props: {
+    ariaId: {
+      required: true,
+      type: String,
+    },
+  },
   data() {
     return {
       socialLinks: [

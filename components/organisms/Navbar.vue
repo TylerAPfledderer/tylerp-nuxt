@@ -6,14 +6,15 @@
     div(class='w-full md:flex md:justify-between page-max-w')
       div(class='flex items-center justify-between p-2 bg-gray-700 md:bg-transparent md:p-0')
         nuxt-link(to='/' @click.native='menuOpen && hideMobileNavOnClickedLink($event)')
-          A-Heading(tag='span' content='Tyler Pfledderer' class='text-white font-heading ms-2 md:text-gray-700')
+          A-Heading(tag='span' content='Tyler Pfledderer' class='text-white font-heading ms-2 md:text-gray-700 md:ms-4')
         //- Mobile menu toggle
         button(
+          type='button'
           class='bg-gray-600 rounded-md cursor-pointer w-11 h-11 py-[10px] px-2 active:bg-gray-700 md:hidden'
           @click='toggleNav()'
           aria-label='Page Navigation'
           :aria-expanded='menuOpen ? "true" : "false"')
-          div(
+          span(
             class='flex flex-col items-center justify-between h-full transition-transform duration-300'
             :class='menuOpen && "transform rotate-180"'
           )
@@ -34,8 +35,8 @@
         :class='menuOpen ? "max-h-full opacity-100" : "max-h-0 opacity-0"'
         @click='hideMobileNavOnClickedLink($event)'
       )
-        M-NavLinks
-        M-SocialLinks(class='mt-14 md:hidden')
+        M-NavLinks(ariaId='page-links')
+        M-SocialLinks(class='mt-14 md:hidden' ariaId='social-links-navbar')
 </template>
 <script>
 import { ref } from '@nuxtjs/composition-api';

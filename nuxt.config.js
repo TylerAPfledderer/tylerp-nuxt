@@ -96,6 +96,16 @@ export default {
     },
   ],
 
+  htmlValidator: {
+    usePrettier: true,
+    options: {
+      rules: {
+        'no-redundant-role': 'off',
+        'heading-level': 'warn',
+      },
+    },
+  },
+
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/pwa
@@ -126,6 +136,8 @@ export default {
     ],
     // https://image.nuxtjs.org/
     '@nuxt/image',
+    // https://html-validator.nuxtjs.org
+    '@nuxtjs/html-validator',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
