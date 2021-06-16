@@ -1,5 +1,5 @@
 <template lang="pug">
-  nav(class='fixed top-0 z-50 w-full md:py-4 md:px-6 md:bg-white lg:px-16' role='navigation')
+  nav(class='fixed top-0 z-50 w-full md:py-4 md:px-6 md:bg-white md:shadow-md lg:px-16' role='navigation')
     //- Heading area of navbar
     //-   Mobile View: Header and menu toggle visible
     //-   Larger View: Header inline with navlinks
