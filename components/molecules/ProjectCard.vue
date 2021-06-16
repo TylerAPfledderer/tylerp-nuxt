@@ -1,6 +1,6 @@
 <template lang="pug">
   // 'min-w' provided to account for padding around the card to keep from shrinking too low
-  section(class='flex flex-col h-full overflow-hidden bg-white shadow-md rounded-xl max-w-[336px] min-w-[272px] text-black')
+  section(class='flex flex-col h-full overflow-hidden text-black bg-white shadow-md rounded-xl')
     A-Image(
       class='w-full h-[160px] object-cover object-center-top'
       :imgPath='project.previewImg'

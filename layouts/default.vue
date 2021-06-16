@@ -18,6 +18,6 @@ export default {
 </script>
 <style lang="postcss">
 .page-max-w {
-  @apply max-w-7xl m-auto;
+  @apply max-w-[87rem] m-auto;
 }
 </style>

@@ -1,5 +1,5 @@
 <template lang="pug">
-  ul(class='inline-flex flex-wrap justify-center gap-y-8 md:gap-y-12 lg:gap-x-4 xl:gap-6')
+  ul(class='flex flex-wrap justify-center gap-y-8 md:gap-y-12 lg:gap-x-4 xl:gap-y-6 xl:gap-x-8')
     li(
       v-for='(skill, index) in skills'
       :key='index'

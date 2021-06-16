@@ -1,7 +1,7 @@
 <template lang="pug">
   //- Flex gap trick from https://coryrylan.com/blog/css-gap-space-with-flexbox
-  ul(class='inline-flex flex-wrap justify-center')
-    li(v-for='(project, index) in projects' :key='index')
+  ul(class='flex flex-wrap justify-center gap-y-6 lg:gap-x-6')
+    li(v-for='(project, index) in projects' :key='index' class='max-w-[336px] min-w-[272px] w-full')
       M-ProjectCard(:project='project')
 </template>
 <script>
