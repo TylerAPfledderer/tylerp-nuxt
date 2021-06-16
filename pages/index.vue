@@ -2,7 +2,7 @@
   Fragment
     M-Hero()
     MainWrap
-      Section#about(sectionTitle='Who Am I?' class='relative !py-16 section-dark about-slanted-edge')
+      Section#about(sectionTitle='Who Am I?' class='relative xl:pt-20 xl:pb-28 section-dark about-slanted-edge')
         div(class='flex justify-center')
           i(v-html='require("~/assets/icons/source-code.svg?raw")' class='hidden w-48 mr-6 xl:block')
           A-BodyText(
@@ -39,7 +39,7 @@ export default {
   .skill-slanted-edge {
     @apply relative bg-white z-10;
     &::before {
-      --tw-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.2) !important;
+      --tw-shadow: 0 -30px 20px -18px rgba(0, 0, 0, 0.2) !important;
       @apply empty-content h-full bg-inherit w-screen absolute left-0 top-[-1vw] z-[-10] transform skew-y-1 shadow;
     }
   }
