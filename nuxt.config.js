@@ -138,6 +138,13 @@ export default {
     '@nuxt/image',
     // https://html-validator.nuxtjs.org
     '@nuxtjs/html-validator',
+    // https://github.com/nuxt-community/netlify-files-module
+    [
+      '@nuxtjs/netlify-files',
+      {
+        detectForms: true,
+      },
+    ],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
