@@ -9,8 +9,13 @@
         class='max-w-[400px] mx-auto'
         @submit='checkSubmit'
         netlify
+        netlify-honeypot='bot-field'
+        name='contact-us'
+        method='POST'
         novalidate='true'
       )
+        //- Hidden Input for the Netlify Forms
+        input(type='hidden' name='form-name' value='contact-us')
         //- Input field for Full Name
         M-FormPair(
           :isError='errors.name'
@@ -73,8 +78,8 @@ export default {
         this.errors.email = 'Not a valid email';
       }
 
-      if (!this.message || !this.validMessage(this.message)) {
-        this.errors.message = 'Message to Tyler required with no leading space';
+      if (!this.message) {
+        this.errors.message = 'Message required';
       }
 
       // If no errors are pushed
@@ -94,10 +99,6 @@ export default {
       const re =
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
-    },
-    validMessage(message) {
-      const re = /^\S.+\S$/;
-      return re.test(message);
     },
   },
 };
