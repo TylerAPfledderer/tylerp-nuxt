@@ -22,4 +22,10 @@ collections:
       - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Preview Image', name: 'previewImg', widget: 'image' }
       - { label: 'Link to Project Demo', name: 'demoUrl', widget: 'string' }
-      - { Label: 'Programming Tools Used', name: 'tags', widget: 'list' }
+      # - { Label: 'Programming Tools Used', name: 'tags', widget: 'list' }
+      - {
+          label: 'Programming Tools Used',
+          name: 'tags',
+          widget: 'list',
+          hint: 'Use only the following in lowercase: bootstrap, codepen, css, gatsby, html, js, linkedin, nuxt, react, sass, tailwindcss, twitter, vuejs',
+        }
