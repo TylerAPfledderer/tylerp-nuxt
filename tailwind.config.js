@@ -1,8 +1,5 @@
 const plugin = require('tailwindcss/plugin');
-const {
-  darken,
-  lighten
-} = require('polished');
+const { darken, lighten } = require('polished');
 const colors = require('tailwindcss/colors');
 const _ = require('lodash');
 
@@ -38,9 +35,6 @@ module.exports = {
       2: theme('spacing.12'),
       3: theme('spacing.16'),
     }),
-    modularScale: {
-      ratio: 1.2
-    },
     screens: {
       xs: '375px',
       sm: '425px',
@@ -65,7 +59,7 @@ module.exports = {
         },
         'focus-border': '#333',
         error: '#f00',
-        inherit: 'inherit'
+        inherit: 'inherit',
       },
       spacing: {
         'screen-width': '100vw',
@@ -78,10 +72,10 @@ module.exports = {
       keyframes: {
         swell: {
           '50%': {
-            transform: 'scale(1.2)'
+            transform: 'scale(1.2)',
           },
           '100%': {
-            transform: 'scale(1)'
+            transform: 'scale(1)',
           },
         },
         waggleScale: {
@@ -124,58 +118,33 @@ module.exports = {
   },
   plugins: [
     // This Modular Scale plugin scheme courtesy of Rico Sta. Cruz - https://ricostacruz.com/til/another-look-at-tailwind
-    plugin(({
-      addUtilities,
-      theme
-    }) => {
-      const ratio = theme('modularScale.ratio');
-      const leading = theme('lineHeight');
+    plugin(({ addUtilities, theme }) => {
       addUtilities({
-        '.ms-small': {
-          fontSize: `${ratio ** -1}rem`,
-          lineHeight: leading[1],
-        },
         '.ms-1': {
-          fontSize: `${ratio ** 1}rem`,
-          lineHeight: leading[1]
+          fontSize: 'clamp(1.2rem, 0.3vw + 1.1rem, 1.25rem)',
+          lineHeight: '3rem',
         },
         '.ms-2': {
-          fontSize: `${ratio ** 2}rem`,
-          lineHeight: leading[1]
+          fontSize: 'clamp(1.44rem, 0.7vw + 1.3rem, 1.563rem)',
+          lineHeight: '3rem',
         },
         '.ms-3': {
-          fontSize: `${ratio ** 3}rem`,
-          lineHeight: leading[2]
+          fontSize: 'clamp(1.728rem, 1.4vw + 1.4rem, 1.953rem)',
+          lineHeight: '3rem',
         },
         '.ms-4': {
-          fontSize: `${ratio ** 4}rem`,
-          lineHeight: leading[2]
+          fontSize: 'clamp(2.074rem, 2.2vw + 1.6rem, 2.441rem)',
+          lineHeight: '3rem',
         },
         '.ms-5': {
-          fontSize: `${ratio ** 5}rem`,
-          lineHeight: leading[2]
-        },
-        '.ms-6': {
-          fontSize: `${ratio ** 6}rem`,
-          lineHeight: leading[3]
-        },
-        '.ms-7': {
-          fontSize: `${ratio ** 7}rem`,
-          lineHeight: leading[3]
+          fontSize: 'clamp(2.488rem, 3.4vw + 1.7rem, 3.052rem)',
+          lineHeight: 'clamp(3rem, 9.1vw + 0.9rem, 4.5rem)',
         },
       });
     }),
-    plugin(({
-      addVariant,
-      e
-    }) => {
-      addVariant('hover-focus', ({
-        modifySelectors,
-        separator
-      }) => {
-        modifySelectors(({
-          className
-        }) => {
+    plugin(({ addVariant, e }) => {
+      addVariant('hover-focus', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
           return `.${e(`hover-focus${separator}${className}`)}:hover, .${e(
             `hover-focus${separator}${className}`
           )}:focus`;
@@ -184,9 +153,7 @@ module.exports = {
     }),
     require('tailwindcss-pseudo-elements'),
     // Apply utility for a fully centered [group of] item(s) in flexbox
-    plugin(({
-      addUtilities
-    }) => {
+    plugin(({ addUtilities }) => {
       const newUtility = {
         '.flex-center': {
           'justify-content': 'center',
@@ -197,21 +164,29 @@ module.exports = {
       addUtilities(newUtility, ['responsive']);
     }),
     // Render width and height of equal value
-    plugin(({
-      addUtilities,
-      theme,
-      e
-    }) => {
+    plugin(({ addUtilities, theme, e }) => {
       const squareShapeUtilities = _.map(theme('spacing'), (value, key) => {
         return {
           [`.${e(`square-${key}`)}`]: {
             width: value,
-            height: value
-          }
+            height: value,
+          },
         };
       });
 
       addUtilities(squareShapeUtilities);
+    }),
+    // Generate a flex-basis utility based on spacing values
+    plugin(({ addUtilities, theme, e }) => {
+      addUtilities(
+        _.map(theme('width'), (value, key) => {
+          return {
+            [`.${e(`flex-basis-${key}`)}`]: {
+              'flex-basis': value,
+            },
+          };
+        })
+      );
     }),
   ],
 };

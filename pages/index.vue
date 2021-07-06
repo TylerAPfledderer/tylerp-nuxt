@@ -28,7 +28,7 @@ export default {
 <style lang="postcss" scoped>
 @screen md {
   .about-slanted-edge {
-    @apply relative bg-white;
+    @apply relative;
 
     &::before {
       --tw-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.2) !important;

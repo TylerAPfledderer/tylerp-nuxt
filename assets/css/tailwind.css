@@ -18,7 +18,7 @@
   }
 
   h3 {
-    @apply font-semibold ms-2;
+    @apply font-semibold ms-3;
   }
 
   body {
@@ -27,20 +27,6 @@
 
   p {
     @apply mb-6;
-  }
-
-  @screen md {
-    h1 {
-      @apply ms-7;
-    }
-
-    h2 {
-      @apply ms-6;
-    }
-
-    h3 {
-      @apply ms-4;
-    }
   }
 }
 

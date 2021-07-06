@@ -7,7 +7,7 @@
       )
       O-ProjectList(:projects='projects')
       div(class='mt-6 md:mt-12')
-        span(class='inline-block mb-5 ms-2 md:ms-4') Ready to Get to Work?
+        span(class='inline-block mb-5 ms-2') Ready to Get to Work?
         A-Button(buttonType='nuxtLink' path='/contact' appearance='secondary--dark' content='Reach Out' class='m-auto')
 </template>
 <script>

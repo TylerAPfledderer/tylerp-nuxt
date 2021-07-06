@@ -6,7 +6,7 @@
     div(class='w-full md:flex md:justify-between page-max-w')
       div(class='flex items-center justify-between p-2 bg-gray-700 md:bg-transparent md:p-0')
         nuxt-link(to='/' @click.native='menuOpen && hideMobileNavOnClickedLink($event)')
-          A-Heading(tag='span' content='Tyler Pfledderer' class='text-white font-heading ms-2 md:text-gray-700 md:ms-4')
+          A-Heading(tag='span' content='Tyler Pfledderer' class='text-white font-heading ms-2 md:text-gray-700')
         //- Mobile menu toggle
         button(
           type='button'
