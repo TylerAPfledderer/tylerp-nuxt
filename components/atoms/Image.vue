@@ -1,5 +1,5 @@
 <template lang="pug">
-  nuxt-img(:src='imgPath' :alt='altText || ""' format='webp')
+  nuxt-img(:src='imgPath' :alt='altText || ""' format='webp' sizes="sm:272px md:442px xl:557px")
 </template>
 <script>
 export default {
