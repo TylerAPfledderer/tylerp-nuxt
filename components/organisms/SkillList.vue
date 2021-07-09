@@ -19,7 +19,7 @@ export default {
             'Attention to detail with the use of the NVDA screen reader to test interactions with web pages and components. This is essential for universal usuability and design.',
         },
         {
-          logos: ['react', 'gatsby'],
+          logos: ['react'],
           heading: 'Quick Building With React',
           description:
             'With my fundamental knowledge of React and the Gatsby framework, they can provide high usability to your complex project.',
@@ -31,8 +31,8 @@ export default {
             'Vue can provide you a lighter load for a smaller application.<br/> <strong>(This very site is built in NuxtJS!)</strong>',
         },
         {
-          logos: ['sass', 'styled-components'],
-          heading: 'SASS Style Preprocessing',
+          logos: ['sass'],
+          heading: 'Preprocessing with SASS',
           description:
             'This matters in making stylesheet creation programmatic . . . Which means fast building and scaling of the design!',
         },
