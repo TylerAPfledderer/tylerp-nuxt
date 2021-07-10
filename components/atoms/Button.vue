@@ -43,15 +43,17 @@ export default {
       type: Boolean,
     },
   },
-  data() {
+  setup({ appearance }) {
+    const baseClasses = [
+      'base',
+      'focus:!border-[#444]',
+      appearance,
+      [null, 'base--dark'].includes(appearance) &&
+        'transform hover-focus:underline hover-focus:!font-black active:scale-90 visited:text-[#ededed]',
+    ];
+
     return {
-      baseClasses: [
-        'base',
-        'focus:!border-[#444]',
-        this.appearance,
-        (this.appearance === null || this.appearance === 'base--dark') &&
-          'transform hover-focus:underline hover-focus:!font-black active:scale-90 visited:text-[#ededed]',
-      ],
+      baseClasses,
     };
   },
 };

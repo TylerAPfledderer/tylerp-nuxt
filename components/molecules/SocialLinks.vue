@@ -17,23 +17,23 @@ export default {
       type: String,
     },
   },
-  data() {
-    return {
-      socialLinks: [
-        {
-          href: 'https://codepen.io/tylerapfledderer',
-          icon: 'codepen',
-        },
-        {
-          href: 'https://linkedin.com/in/tyler-pfledderer',
-          icon: 'linkedin',
-        },
-        {
-          href: 'https://twitter.com/t_pfledderer',
-          icon: 'twitter',
-        },
-      ],
-    };
+  setup() {
+    const socialLinks = [
+      {
+        href: 'https://codepen.io/tylerapfledderer',
+        icon: 'codepen',
+      },
+      {
+        href: 'https://linkedin.com/in/tyler-pfledderer',
+        icon: 'linkedin',
+      },
+      {
+        href: 'https://twitter.com/t_pfledderer',
+        icon: 'twitter',
+      },
+    ];
+
+    return { socialLinks };
   },
 };
 </script>

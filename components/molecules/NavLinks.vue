@@ -13,20 +13,20 @@ export default {
       type: String,
     },
   },
-  data() {
-    return {
-      links: [
-        {
-          url: '/projects',
-          name: 'Projects',
-        },
-        {
-          url: '/contact',
-          name: 'Reach Out',
-          appearance: 'secondary',
-        },
-      ],
-    };
+  setup() {
+    const links = [
+      {
+        url: '/projects',
+        name: 'Projects',
+      },
+      {
+        url: '/contact',
+        name: 'Reach Out',
+        appearance: 'secondary',
+      },
+    ];
+
+    return { links };
   },
 };
 </script>

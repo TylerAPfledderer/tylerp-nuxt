@@ -9,10 +9,10 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      currYear: new Date().getFullYear(),
-    };
+  setup() {
+    const currYear = new Date().getFullYear();
+
+    return { currYear };
   },
 };
 </script>

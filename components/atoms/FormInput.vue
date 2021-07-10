@@ -17,6 +17,7 @@
   //- v-model applied to element to run computed property on value change
 </template>
 <script>
+import { computed } from '@vue/composition-api';
 export default {
   /**
    * Credit to this stackOverflow answer on passing data to the parent with v-model
@@ -66,11 +67,11 @@ export default {
       },
     },
   },
-  computed: {
+  setup({ value }, { emit }) {
     // Sending input value data back up to the parent component via 'v-model'
-    inputVal: {
+    const inputVal = computed({
       get() {
-        return this.value;
+        return value;
       },
       // Setter grabbing value from getter
       set(val) {
@@ -78,9 +79,11 @@ export default {
          * The $emit 'event' name has to equal '@input'
          * which is a part of v-model tied to the parent component
          */
-        this.$emit('input', val);
+        emit('input', val);
       },
-    },
+    });
+
+    return { inputVal };
   },
 };
 </script>

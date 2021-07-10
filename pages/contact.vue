@@ -45,61 +45,86 @@
           A-Button(buttonType='form' type='submit' appearance='primary' content='Send')
 </template>
 <script>
+import { reactive, ref } from '@vue/composition-api';
 export default {
-  data() {
-    return {
-      errors: {},
-      // Below data acquired from v-model directives
+  setup() {
+    // ref and reactive properties to allow for reactive values inside setup.
+    // ref for primitives and reactive for objects
+
+    // Set up reactive object for resetting
+    const initialErrMsgStates = {
       name: '',
       email: '',
       message: '',
     };
-  },
-  head() {
-    return {
-      title: 'Reach Out!',
-    };
-  },
-  methods: {
-    checkSubmit(event) {
-      this.errors = {};
 
-      if (!this.name) {
-        this.errors.name = 'Name required.';
-      } else if (!this.validName(this.name)) {
-        this.errors.name =
+    // Data for the v-models attached to the input fields
+    const name = ref('');
+    const email = ref('');
+    const message = ref('');
+
+    // Spread reactive object
+    const errors = reactive({ ...initialErrMsgStates });
+
+    /** Function to reset reactive object back to initial state */
+    function resetErrorMessages() {
+      Object.assign(errors, initialErrMsgStates);
+    }
+
+    /** Function to run validation on form submit */
+    const checkSubmit = (event) => {
+      resetErrorMessages();
+      if (!name.value) {
+        errors.name = 'Name required.';
+      } else if (!validName(name.value)) {
+        errors.name =
           'Please provide a first and last name with no extra special characters.';
       }
 
-      if (!this.email) {
-        this.errors.email =
-          'Email field empty. Please provide an email address';
-      } else if (!this.validEmail(this.email)) {
-        this.errors.email = 'Not a valid email';
+      if (!email.value) {
+        errors.email = 'Email field empty. Please provide an email address';
+      } else if (!validEmail(email.value)) {
+        errors.email = 'Not a valid email';
       }
 
-      if (!this.message) {
-        this.errors.message = 'Message required';
+      if (!message.value) {
+        errors.message = 'Message required';
       }
 
       // If no errors are pushed
-      if (!Object.keys(this.errors).length) {
+      if (!Object.keys(errors).length) {
         // return true to push submit and skip preventDefault action
         return true;
       }
 
       // Place preventDefault last to ensure that form does submit when name and email return true
       event.preventDefault();
-    },
-    validName(name) {
+    };
+
+    const validName = (name) => {
       const re = /^[a-zA-Z.]+\s[a-zA-Z]+(\s[a-zA-Z.]+)?$/;
       return re.test(name);
-    },
-    validEmail(email) {
+    };
+    const validEmail = (email) => {
       const re =
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
-    },
+    };
+
+    return {
+      errors,
+      name,
+      email,
+      message,
+      checkSubmit,
+      validName,
+      validEmail,
+    };
+  },
+  head() {
+    return {
+      title: 'Reach Out!',
+    };
   },
 };
 </script>
