@@ -106,6 +106,9 @@ module.exports = {
       objectPosition: {
         'center-top': 'center top',
       },
+      boxShadow: {
+        'project-image': '0 0 30px -10px rgba(0,0,0,0.5)',
+      },
     },
   },
   variants: {

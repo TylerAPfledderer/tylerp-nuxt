@@ -2,10 +2,8 @@
   // 'min-w' provided to account for padding around the card to keep from shrinking too low
   section(class='flex flex-col h-full overflow-hidden text-black bg-white shadow-md rounded max-w-[442px] xl:w-full xl:max-w-none')
     A-Image(
-      class='w-full h-[160px] object-cover object-center-top xl:w-1/2 xl:h-auto xl:flex-basis-2/5'
+      class='object-cover w-full h-52 object-center-top shadow-project-image xl:w-1/2 xl:h-auto xl:flex-basis-2/5'
       :imgPath='project.previewImg'
-      width='336'
-      height='336'
     )
     div(class='flex flex-col items-center w-full h-full p-6 xl:justify-center xl:w-auto xl:flex-grow')
       div(class='flex items-center mb-6')
