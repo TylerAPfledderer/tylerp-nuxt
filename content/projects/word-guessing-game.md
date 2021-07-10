@@ -1,6 +1,6 @@
 ---
 layout: projects
-title: Word Guessing Game
+title: Phrase Guessing Game
 description: "A desktop-based hangman-style game. This project was used to build
   in 4 different JavaScript versions: Vanilla, Classes, Vue, and React. The Vue
   version implements Vuex store to pass state for letters selected and displayed
