@@ -127,7 +127,7 @@ export default {
         url: 'https://tylerpweb.dev',
         title: 'Tyler Pfledderer - Web Developer',
         description:
-          'Portfolio Site of Tyler Pfledderer, Web Development. Building Efficient and accessible websites with Vue, React, WordPress, and more!',
+          'Portfolio Site of Tyler Pfledderer, Web Development. Building Efficient and accessible websites with Vue, React, and more!',
         img: 'icon.png',
         locale: 'en_US',
         twitter: '@t_pfledderer',
