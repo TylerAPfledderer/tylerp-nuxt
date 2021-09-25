@@ -45,10 +45,10 @@ export default {
     ],
   },
   sitemap: {
-    hostname: 'https://tylerpweb-nuxt.netlify.app',
+    hostname: 'https://tylerpweb.dev',
   },
   robots: {
-    Sitemap: 'https://tylerpweb-nuxt.netlify.app/sitemap.xml',
+    Sitemap: 'https://tylerpweb.dev/sitemap.xml',
     UserAgent: '*',
     Disallow: '/admin',
   },
@@ -124,7 +124,7 @@ export default {
     [
       'nuxt-social-meta',
       {
-        url: 'https://tylerpweb-nuxt.netlify.app',
+        url: 'https://tylerpweb.dev',
         title: 'Tyler Pfledderer - Web Developer',
         description:
           'Portfolio Site of Tyler Pfledderer, Web Development. Building Efficient and accessible websites with Vue, React, WordPress, and more!',
