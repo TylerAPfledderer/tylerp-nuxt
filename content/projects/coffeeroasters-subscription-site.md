@@ -1,6 +1,6 @@
 ---
 layout: projects
-title: Coffeeroasters Subscription Site
+title: Coffee Subscription Site
 description: A design-to-code 3-page subscription site, showcasing an
   interactive form to present subscription options. Chakra UI is used for
   reusable Styled components that are accessible first, and TypeScript for
