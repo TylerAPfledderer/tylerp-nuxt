@@ -29,3 +29,20 @@ collections:
           widget: 'list',
           hint: 'Use only the following in lowercase: bootstrap, codepen, css, gatsby, html, js, linkedin, nuxt, react, sass, tailwindcss, twitter, vuejs',
         }
+  - name: 'skills'
+    label: 'Skills'
+    folder: 'content/skills'
+    format: 'frontmatter'
+    create: true
+    preview_path: '/'
+    fields: # The fields for each document, usually in front matter
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'skills' }
+      - { label: 'Display Order', name: 'display-order', widget: 'number' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - {
+          label: 'Skill Logos',
+          name: 'tags',
+          widget: 'list',
+          hint: 'Available labels: universal-access, react, gatsby, vuejs, nuxt, sass, tailwindcss, bootstrap, html, css, js, laptop-code',
+        }
