@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "admin": "netlify:admin",
+    "admin": "netlify open:admin",
     "netlify": "netlify build",
     "dev": "nuxt",
     "build": "nuxt build",
