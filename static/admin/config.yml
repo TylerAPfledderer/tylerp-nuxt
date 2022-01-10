@@ -27,7 +27,7 @@ collections:
           label: 'Programming Tools Used',
           name: 'tags',
           widget: 'list',
-          hint: 'Use only the following in lowercase: bootstrap, codepen, css, gatsby, html, js, linkedin, nuxt, react, sass, tailwindcss, twitter, vuejs',
+          hint: 'Use only the following in lowercase: bootstrap, css, gatsby, html, js, nuxt, react, sass, tailwindcss, twitter, vuejs',
         }
   - name: 'skills'
     label: 'Skills'
