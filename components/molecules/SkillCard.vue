@@ -2,7 +2,7 @@
   div(class='flex flex-col items-center lg:w-[369px]')
     div(class='flex mb-3 flex-center')
       A-Icon(
-        v-for='(logo, index) in skill.logos'
+        v-for='(logo, index) in skill.tags'
         :key='index'
         :icon='logo'
         isLarge
@@ -10,7 +10,7 @@
       )
     A-Heading(
       tag='h3'
-      :content="skill.heading"
+      :content="skill.title"
       class='mb-2'
     )
     A-BodyText(:content='skill.description' class='max-w-[277px] mb-0')
@@ -21,10 +21,10 @@ export default {
     skill: {
       required: true,
       type: Object,
-      logos: {
+      tags: {
         type: Array,
       },
-      heading: {
+      title: {
         type: String,
       },
       description: {
