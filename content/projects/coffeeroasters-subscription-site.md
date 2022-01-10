@@ -9,4 +9,5 @@ previewImg: /images/coffeeroasters-preview.png
 demoUrl: https://coffeeroastersub.gatsbyjs.io/
 tags:
   - gatsby
+  - chakraui
 ---
