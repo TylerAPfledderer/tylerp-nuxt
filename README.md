@@ -33,7 +33,4 @@ This site implements the Netlify CMS (Content Management System) to currently us
 ## Further Considerations
 
 - This site has passed Lighthouse checks in Web Accessibility. However, this is not enough as more can be done to improve UX with screen readers, such as a 'Skip Navigation' link and use of the `aria-live` / `role="alert"` attributes to trigger the screen reader should contact form validation fail.
-- I am working to update, add, and replace my current list of projects. Projects in progress include:
-  - A Multi-Teacher Private Lesson Scheduler
-  - A local small business vendor directory aimed towards Event Planners
 - As stated above, I use Netlify CMS to make it easier to add and update my list of projects through a simple but helpful UI. I will be exploring options to use to it for easier updating to other parts of my site, such as the list of skills.
