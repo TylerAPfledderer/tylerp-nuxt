@@ -1,5 +1,5 @@
 <template lang="pug">
-  a(v-if='isLink' :href='path' v-html='require(`~/assets/icons/${icon}.svg?raw`)' class='block p-2 w-11 svgLink' target='_blank' rel="noreferrer" :aria-label='icon')
+  a(v-if='isLink' :href='path' v-html='require(`~/assets/icons/${icon}.svg?raw`)' class='block p-2 w-11 svgLink' target='_blank' rel="noreferrer" :aria-label='`${icon} (Opens a new window)`')
   div(v-else v-html='require(`assets/icons/${icon}.svg?raw`)' :class='isLarge ? "square-16 large-logo" : "w-8"' )
 </template>
 <script>

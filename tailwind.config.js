@@ -68,6 +68,7 @@ module.exports = {
         'shadow-background': 'background, shadow',
         background: 'background',
         'nav-toggle': 'transform, opacity, width',
+        top: 'top',
       },
       keyframes: {
         swell: {
